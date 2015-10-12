@@ -10,7 +10,7 @@
 
   <groupId>org.irenical.maven</groupId>
   <artifactId>parent-executable</artifactId>
-  <version>1.1.1</version>
+  <version>1.1.2-SNAPSHOT</version>
 
   <packaging>pom</packaging>
 
