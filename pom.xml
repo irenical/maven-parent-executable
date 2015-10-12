@@ -10,7 +10,7 @@
 
   <groupId>org.irenical.maven</groupId>
   <artifactId>parent-executable</artifactId>
-  <version>1.1.2-SNAPSHOT</version>
+  <version>1.1.5-SNAPSHOT</version>
 
   <packaging>pom</packaging>
 
@@ -27,7 +27,7 @@
         <artifactId>maven-shade-plugin</artifactId>
         <version>2.4.1</version>
         <configuration>
-          <createDependencyReducedPom>true</createDependencyReducedPom>
+          <createDependencyReducedPom>false</createDependencyReducedPom>
           <filters>
             <filter>
               <artifact>*:*</artifact>
