@@ -14,6 +14,10 @@
 
   <packaging>pom</packaging>
 
+  <properties>
+    <main.class>NONE</main.class>
+  </properties>
+
   <scm>
     <connection>scm:git:git@github.com:irenical/maven-parent-executable.git</connection>
     <developerConnection>scm:git:git@github.com:irenical/maven-parent-executable.git</developerConnection>
@@ -22,6 +26,36 @@
 
   <build>
     <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-enforcer-plugin</artifactId>
+        <version>1.4.1</version>
+        <dependencies>
+          <dependency>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>extra-enforcer-rules</artifactId>
+            <version>1.0-beta-4</version>
+          </dependency>
+        </dependencies>
+        <executions>
+          <execution>
+            <id>enforce-property</id>
+            <goals>
+              <goal>enforce</goal>
+            </goals>
+            <configuration>
+              <rules>
+                <requirePropertyDiverges>
+                  <property>main.class</property>
+                  <message>You must set a main class property!</message>
+                  <regex>NONE</regex>
+                </requirePropertyDiverges>
+              </rules>
+              <fail>true</fail>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-shade-plugin</artifactId>
